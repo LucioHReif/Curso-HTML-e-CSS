@@ -1,0 +1,29 @@
+<html lang="pt-br">
+<head>
+    <title>Exemplo transição</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lúcio">
+    <meta name="description" content="descrição bacanuda">
+    <meta name="keywords" content="html5, tecnologia">    
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;           
+            transition-property: width, height;
+            transition-duration: 3s, 3s;
+            transition-timing-function: cubic-bezier(.67,-0.38,.5,1.5), linear;
+            transition-delay: 0s, .3s; 
+            text-align: center;
+            padding: 10px;
+        }
+        div:hover{
+            width: 400px;
+            height: 400px; 
+        }
+    </style>
+</head>
+<body>
+    <div>TRANSIÇÃO</div>
+</body>
+</html>

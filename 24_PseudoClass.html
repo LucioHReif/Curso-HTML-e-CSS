@@ -1,0 +1,55 @@
+<html lang="pt-br">
+<head>
+    <title>Pseudo Classes</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lúcio">
+    <meta name="description" content="descrição bacanuda">
+    <meta name="keywords" content="html5, tecnologia"> 
+    <style>
+        input[type="checkbox"]:checked{
+            width: auto;
+            height: auto;
+        }      
+        button:disabled{
+            background: blue;
+            color: white;
+        }      
+        p{
+            color: red;
+        }
+        p:empty:before{
+            content: "paragrafo vazio nao dá, ne!";
+        }      
+        input[type="text"]:focus{
+            background: #ccc;
+        }       
+        input[type="text"]:read-only{
+            background: yellow;
+        }       
+        a:focus, a:hover, div:focus{
+            background: red;
+        }       
+        input::placeholder{
+            color: red
+        }
+    </style>
+</head>
+<body>   
+    <label><input type="checkbox" value="sim"> Aceito o contrato</label>  
+    <button>Habilitado</button>
+    <button disabled="">Desabilitado</button>   
+    <p>Paragrafo 1</p>
+    <p></p>
+    <hr>    
+    <input type="text">
+    <input type="text" value="valor inicial">
+    <input type="text" value="valor inicial" readonly="">
+    <input type="text" value="valor inicial" disabled="">
+    <input type="text" placeholder="valor do placeholder">  
+    <ul>
+        <li><a href="#">Link falso</a></li>
+        <li><a href="#">Link falso</a></li>
+    </ul>   
+    <div tabindex="3">Div Exemplo</div>
+</body>
+</html>
