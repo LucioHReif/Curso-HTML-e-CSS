@@ -76,3 +76,45 @@
     </div>
 </body>
 </html>
+
+PROPRIEDADE ´POSITION
+define como um elemento é posicionado em um documento. As propriedades , , e determinam a localização final dos elementos posicionados.
+position: top/right/bottom/left
+
+VALORES
+-> static: O elemento é posicionado de acordo com o fluxo normal do documento. As propriedades top, right, bottom, lefte não têm efeito. Este é o valor padrão.z-index
+-> relative: O elemento é posicionado de acordo com o fluxo normal do documento e, em seguida, deslocado em relação a si mesmo com base nos valores de top, right, bottome left. 
+O deslocamento não afeta a posição de nenhum outro elemento; assim, o espaço dado para o elemento no layout da página é o mesmo como se a posição fosse static.
+Esse valor cria um novo contexto de empilhamento quando o valor de z-indexnão é auto. Seu efeito nos elementos table-*-group, table-row, table-column, table-celle table-captioné indefinido.
+-> absolute: O elemento é removido do fluxo normal de documentos e nenhum espaço é criado para o elemento no layout da página. 
+Ele é posicionado em relação ao seu ancestral posicionado mais próximo , se houver; caso contrário, ele é colocado em relação ao bloco recipiente inicial. 
+Sua posição final é determinada pelos valores de top, right, bottome left. Esse valor cria um novo contexto de empilhamento quando o valor de z-indexnão é auto. 
+As margens das caixas absolutamente posicionadas não colapsam com outras margens.
+-> fixed: O elemento é removido do fluxo normal de documentos e nenhum espaço é criado para o elemento no layout da página. Ele é posicionado em relação ao bloco de 
+conteúdo inicial estabelecido pela viewport , exceto quando um de seus ancestrais tiver um transform, perspective, ou filtera propriedade definida para algo diferente 
+de none(consulte a Especificação de transformações CSS ), ou a will-changepropriedade for definida como transform, caso em que ancestral se comporta como o bloco 
+recipiente. (Observe que há inconsistências do navegador perspectivee filtercontribuem para conter a formação do bloco.) Sua posição final é determinada pelos valores 
+de top, right, bottome left. Este valor sempre cria um novo contexto de empilhamento. Em documentos impressos, o elemento é colocado na mesma posição em todas as páginas .
+-> sticky: O elemento é posicionado de acordo com o fluxo normal do documento e, em seguida, deslocado em relação ao seu ancestral de rolagem mais próximo e bloco 
+contendo (antepassado em nível de bloco mais próximo), incluindo elementos relacionados à tabela, com base nos valores de top, right, bottome left. 
+O deslocamento não afeta a posição de nenhum outro elemento. Este valor sempre cria um novo contexto de empilhamento. 
+
+DESCRIÇÃO
+Tipos de posicionamento
+- Um elemento posicionado é um elemento cujo valor calculado position é relative, absolute, fixedou sticky. (Em outras palavras, é tudo menos static.)
+- Um elemento relativamente posicionado é um elemento cujo valor calculado é . As propriedades e especificam o deslocamento vertical de sua posição normal; 
+o epositionrelativetopbottomleftright especificam o deslocamento horizontal.
+- Um elemento absolutamente posicionado é um elemento cujo valor calculado position é absoluteou fixed. As propriedades top, right, bottome leftespecificam 
+deslocamentos das bordas do bloco que contém o elemento . (O bloco recipiente é o ancestral em relação ao qual o elemento está posicionado.) 
+Se o elemento tiver margens, elas serão adicionadas ao deslocamento. O elemento estabelece um novo contexto de formatação de bloco (BFC) para seu conteúdo.
+- Um elemento posicionado fixamente é um elemento cujo valor calculado é . Ele é tratado como relativamente posicionado até que o bloco que o contém cruze um limite 
+especificado (como definir um valor diferente de automático) dentro de sua raiz de fluxo (ou do contêiner no qual ele rola), ponto em que é tratado como "travado" 
+até encontrar o oposto aresta do bloco que o contém. position: sticky top
+Na maioria das vezes, os elementos absolutamente posicionados que possuem heighte widthdefinidos autocomo são dimensionados para caber em seu conteúdo. 
+No entanto, elementos não substituídos e absolutamente posicionados podem ser feitos para preencher o espaço vertical disponível especificando ambos top e bottom 
+e deixando height não especificados (ou seja, auto). Eles também podem ser feitos para preencher o espaço horizontal disponível especificando ambos left e right e 
+deixando widthcomo auto. 
+
+Exceto para o caso que acabamos de descrever (de elementos absolutamente posicionados preenchendo o espaço disponível):
+- Se ambos tope bottomforem especificados (tecnicamente, não auto), topganha. -->
+- Se ambos lefte rightforem especificados, leftganha quando directioné ltr(inglês, japonês horizontal, etc.) e rightganha quando directioné rtl(persa, árabe, hebraico)
