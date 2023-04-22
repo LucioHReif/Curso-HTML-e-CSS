@@ -64,3 +64,86 @@
     </form>
 </body>
 </html>
+
+TAG INPUT
+O elemento HTML <input> é usado para criar controles interativos para formulários baseados na web para receber dados do usuário. 
+A semântica de um <input> varia consideravelmente dependendo do valor de seu atributo type.
+
+ATRIBUTO MAIS USADO
+*** type ***
+O tipo de controle a ser exibido. O tipo padrão é text, se este atributo não for especificado. Os valores possíveis são:
+-> button: Um botão sem comportamento padrão.
+-> checkbox: Uma caixa de marcação. Você deve usar o atributo value para definir o valor enviado por este item. Use o atributo checked para indicar se o item está 
+selecionado por padrão. Você também pode usar o atributo indeterminate para indicar que a caixa de marcação está em um estado indeterminado 
+(na maioria das plataformas, isso desenha uma linha horizontal cortando a caixa).
+-> color: Um controle para especificar cores. A interface de um seletor de cores não tem nenhuma funcionalidade obrigatória a não ser aceitar cores simples em texto.
+-> date: Um controle para inserir uma data (ano, mês e dia, sem horário).
+-> datetime: Um controle para inserir data e horário (hora, minuto, segundo e fração de segundo) baseado no fuso horário UTC.
+-> datetime-local: Um controle para inserir data e horário, sem fuso horário.
+-> email: Um campo para editar um endereço de e-mail. O valor do campo é validado para estar vazio ou ter um único endereço de e-mail válido antes de ser enviado. 
+As pseudoclasses CSS :valid e :invalid são aplicadas apropriadamente.
+-> file: Um controle que permite ao usuário selecionar um arquivo. Use o atributoaccept para definir os tipos de arquivo que o controle pode selecionar.
+-> hidden: Um controle que não é exibido mas cujo valor é enviado ao servidor.
+-> image: Um botão gráfico para enviar o formulário. Você deve usar o atributo src para definir a fonte da imagem e o atributo alt para definir um texto alternativo. 
+Você pode usar os atributos height e width para definir o tamanho da imagem em pixels.
+-> month: Um controle para inserir mês e ano, sem fuso horário.
+-> number: Um controle para inserir um número de ponto flutuante.
+-> password: Um campo de texto com uma só linha cujo valor é obscurecido. Use o atributo maxlength para especificar o comprimento máximo do valor que pode ser inserido.
+-> radio: Um botão de escolha. Você deve usar o atributo value para definir o valor a ser enviado por este item. Use o atributo checked para indicar se este item deve 
+estar selecionado por padrão. Botões de escolha que têm o mesmo valor para o atributo name estão no mesmo "grupo de botões de escolha"; 
+apenas um botão de escolha no grupo pode estar selecionado de cada vez..
+-> range: Um controle para inserir um número cujo valor exato não é importante. Este tipo de controle usa os seguintes valores padrão se os atributos correspondentes 
+não forem especificados:
+* min: 0
+* max: 100
+* value: min + (max-min)/2, ou min se max for menos que min
+* step: 1
+-> reset: Um botão que faz o conteúdo do formulário voltar a ter seus valores padrão.
+-> search: Um campo de texto com uma só linha para digitar termos de busca; quebras de linha são automaticamente removidas do valor entrado.
+-> submit: Um botão que envia o formulário.
+-> tel: Um controle para inserir um número de telefone; quebras de linha são automaticamente removidas do valor entrado, mas nenhuma outra sintaxe é imposta. 
+Você pode usar atributos como pattern e maxlength para restringir os valores inseridos no controle. As pseudoclasses CSS :valid e :invalid são aplicadas apropriadamente
+-> text: Um campo de texto com uma só linha; quebras de linha são automaticamente removidas do valor entrado.
+-> time: Um controle para inserir um horário sem fuso horário.
+-> url: Um campo para editar uma URL. O valor inserido é validado para ser vazio ou uma URL absoluta válida antes de ser enviado. Quebras de linha e espaços em branco 
+antes e após o valor inserido são automaticamente removidos. Você pode usar atributos como pattern e maxlength para restringir os valores inseridos no controle. 
+As pseudoclasses CSS :valid e :invalid são aplicadas apropriadamente.
+-> week: Um controle para inserir uma data consistindo de ano da semana e número da semana sem fuso horário.
+-----------------------------------------------------------------------------------------------------------------------------
+TAG LABEL
+<label> **representa uma legenda para um item em uma interface de usuário.
+    
+ATRIBUTOS
+Attribute	       Value	          Description
+for	            element_id	         Especifica o id do elemento de formulário ao qual o rótulo deve ser vinculado
+form	         form_id	         Especifica a qual formulário o rótulo pertence
+-----------------------------------------------------------------------------------------------------------------------------
+TAG LEGEND
+A <legend>tag define uma legenda para o elemento <fieldset>.
+-----------------------------------------------------------------------------------------------------------------------------
+TAG SELECT
+O <select>elemento é usado para criar uma lista suspensa. É usado com mais frequência em um formulário para coletar a entrada do usuário.
+O name atributo é necessário para fazer referência aos dados do formulário após o envio do formulário (se você omitir o nameatributo, nenhum dado da 
+lista suspensa será enviado). O id atributo é necessário para associar a lista suspensa a um rótulo.
+As tags <option> dentro do <select>elemento definem as opções disponíveis na lista suspensa.
+Dica: Sempre adicione a tag <label> para melhores práticas de acessibilidade!
+  
+ATRIBUTOS
+Attribute	      Value	           Description
+autofocus	    autofocus	     Especifica que a lista suspensa deve obter foco automaticamente quando a página for carregada
+disabled	    disabled	     Especifica que uma lista suspensa deve ser desativada
+form	        form_id	         Define a qual formulário a lista suspensa pertence
+multiple	    multiple	     Especifica que várias opções podem ser selecionadas ao mesmo tempo
+name	         name	         Define um nome para a lista suspensa
+required	   required	         Especifica que o usuário deve selecionar um valor antes de enviar o formulário
+size	        number	         Define o número de opções visíveis em uma lista suspensa
+-----------------------------------------------------------------------------------------------------------------------------
+TAG FIELDSET
+A <fieldset>tag é usada para agrupar elementos relacionados em um formulário.
+A <fieldset>tag desenha uma caixa ao redor dos elementos relacionados.
+    
+ATRIBUTOS
+Attribute	   Value	      Description
+disabled	  disabled	      Especifica que um grupo de elementos de formulário relacionados deve ser desabilitado
+form	      form_id	      Especifica a qual formulário o conjunto de campos pertence
+name	       text	          Especifica um nome para o fieldset
