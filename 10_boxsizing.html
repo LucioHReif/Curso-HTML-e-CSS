@@ -29,3 +29,18 @@
     <div id="div2">teste</div>
 </body>
 </html>
+
+PROPRIEDADE BOX SIZING
+box-sizingnos permite incluir o preenchimento e a borda na largura e altura total de um elemento.
+
+VALORES
+content-box
+Este é o valor inicial e padrão conforme especificado pelo padrão CSS. As propriedades widthe heightincluem o conteúdo, mas não incluem o preenchimento, 
+a borda ou a margem. Por exemplo,.box {width: 350px; border: 10px solid black;} renderiza uma caixa com 370px de largura.
+Aqui, as dimensões do elemento são calculadas como: largura = largura do conteúdo e altura = altura do conteúdo . (Bordas e preenchimento não são incluídos no cálculo.)
+
+border-box
+As propriedades widthe heightincluem conteúdo, preenchimento e borda, mas não incluem a margem. Observe que o preenchimento e a borda estarão dentro da caixa. 
+Por exemplo, .box {width: 350px; border: 10px solid black;}renderiza uma caixa com 350 px de largura, com a área para conteúdo com 330 px de largura. 
+A caixa de conteúdo não pode ser negativa e é reduzida a 0, impossibilitando o usoborder-box para fazer o elemento desaparecer.
+Aqui as dimensões do elemento são calculadas como: largura = borda + preenchimento + largura do conteúdo e altura = borda + preenchimento + altura do conteúdo .
