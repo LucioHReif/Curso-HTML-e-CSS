@@ -39,6 +39,51 @@
 </body>
 </html>
 
+GRADIENTE CSS
+Os gradientes CSS permitem exibir transições suaves entre duas ou mais cores especificadas. CSS define três tipos de gradientes:
+** Gradientes lineares (desce/cima/esquerda/direita/diagonalmente)
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+--> De cima para baixo: background-image: linear-gradient(red, yellow);
+--> Esquerda para Direita: background-image: linear-gradient(to right, red , yellow);
+--> Diagonal: background-image: linear-gradient(to bottom right, red, yellow);
+--> Usando Ângulos
+Se quiser mais controle sobre a direção do gradiente, você pode definir um ângulo, em vez das direções predefinidas. Um valor de 0deg é equivalente a "to top". 
+Um valor de 90 graus é equivalente a "para a direita". Um valor de 180 graus é equivalente a "to bottom".
+Sintaxe: background-image: linear-gradient(angle, color-stop1, color-stop2);
+--> Usando várias paradas de cores: background-image: linear-gradient(red, yellow, green);
+--> Usando Transparência: oferecem suporte à transparência, que pode ser usada para criar efeitos de esmaecimento. Para adicionar transparência, usamos a função 
+rgba() para definir as paradas de cor. O último parâmetro na função rgba() pode ser um valor de 0 a 1, e define a transparência da cor: 0 indica transparência total, 
+1 indica cor total (sem transparência). Exemplo: background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+--> Repetindo um gradiente linear: background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+
+** Gradientes radiais (definidos por seu centro)
+Um gradiente radial é definido por seu centro. Para criar um gradiente radial, você também deve definir pelo menos duas paradas de cor.
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+--> Paradas de cor com espaçamento diferente: background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+--> Definir forma: O parâmetro de forma define a forma. Pode levar o valor círculo ou elipse. O valor padrão é elipse.
+background-image: radial-gradient(circle, red, yellow, green);
+--> Uso de palavras-chave de tamanhos diferentes: O parâmetro tamanho define o tamanho do gradiente. Pode assumir quatro valores:
+closest-side / farthest-side / closest-corner / farthest-corner
+Exemplo: background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+--> Repetindo um gradiente radial: background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+
+** Gradientes cônicos (girados em torno de um ponto central)
+Um gradiente cônico é um gradiente com transições de cores giradas em torno de um ponto central. Para criar um gradiente cônico, você deve definir pelo menos duas cores.
+background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);
+--> Três Cores: background-image: conic-gradient(red, yellow, green);
+--> Cinco Cores: background-image: conic-gradient(red, yellow, green, blue, black);
+--> Três Cores e Graus: background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+--> Criar Gráficos de Pizza: Basta adicionar border-radius: 50%para fazer o gradiente cônico parecer uma torta:
+background-image: conic-gradient(red, yellow, green, blue, black);
+border-radius: 50%;
+--> Gradiente cônico com ângulo de origem especificado
+O [from angle ] especifica um ângulo pelo qual todo o gradiente cônico é girado. O exemplo a seguir mostra um gradiente cônico com um ângulo de 90 graus:
+background-image: conic-gradient(from 90deg, red, yellow, green);
+--> Gradiente cônico com posição central especificada. A [ posição at ] especifica o centro do gradiente cônico. O exemplo a seguir mostra um gradiente cônico com 
+uma posição central de 60% 45%:
+background-image: conic-gradient(at 60% 45%, red, yellow, green);
+--> Repetindo um gradiente cônico: background-image: repeating-conic-gradient(red 10%, yellow 20%); border-radius: 50%;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 PROPRIEDADE TEXT SHADOW
 A text-shadowpropriedade CSS adiciona sombras ao texto. Ele aceita uma lista separada por vírgulas de sombras a serem aplicadas ao texto e qualquer um de seus arquivos 
 decorations. Cada sombra é descrita por alguma combinação de deslocamentos X e Y do elemento, raio de desfoque e cor.
