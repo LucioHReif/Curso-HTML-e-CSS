@@ -99,3 +99,18 @@
     </ul>   
 </body>
 </html>
+
+PROPRIEDADE NTH CHILD
+O seletor corresponde a cada elemento que é o enésimo filho de seu pai.:nth-child(n) n pode ser um número, uma palavra-chave (par ou ímpar) ou uma fórmula (como an + b ).
+Dica: Observe o seletor :nth-of-type() para selecionar o elemento que é o enésimo filho, do mesmo tipo (tag name) , de seu pai.
+:nth-child(number) {
+  css declarations;
+}
+
+VALORES
+-> odd: Representa elementos cuja posição numérica em uma série de irmãos é ímpar: 1, 3, 5, etc.
+-> even: Representa elementos cuja posição numérica em uma série de irmãos é par: 2, 4, 6, etc.
+-> notação funcional: <An+B>
+Representa elementos cuja posição numérica em uma série de irmãos corresponde ao padrão An+B, para cada número inteiro positivo ou valor zero de n, onde:
+Aé um tamanho de passo inteiro; B é um deslocamento inteiro; n são todos os números inteiros não negativos, começando em 0.
+Ele pode ser lido como o An+B-ésimo elemento de uma lista. O Ae Bdevem ter <integer>valores.
