@@ -108,3 +108,38 @@
     </div>
 </body>
 </html>
+
+** Gradientes radiais (definidos por seu centro)
+Um gradiente radial é definido por seu centro. Para criar um gradiente radial, você também deve definir pelo menos duas paradas de cor.
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+--> Paradas de cor com espaçamento diferente: background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+--> Definir forma: O parâmetro de forma define a forma. Pode levar o valor círculo ou elipse. O valor padrão é elipse.
+background-image: radial-gradient(circle, red, yellow, green);
+--> Uso de palavras-chave de tamanhos diferentes: O parâmetro tamanho define o tamanho do gradiente. Pode assumir quatro valores:
+closest-side / farthest-side / closest-corner / farthest-corner
+Exemplo: background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+--> Repetindo um gradiente radial: background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+COUNTER RESET
+A counter-resetpropriedade cria ou redefine um ou mais contadores CSS.
+A counter-resetpropriedade geralmente é usada junto com a propriedade de incremento de contador e a propriedade de conteúdo.
+** Sintaxe CSS - counter-reset: none|name number|initial|inherit;
+
+Valores de propriedade
+Value	                       Description
+none	                       Valor padrão. Nenhum contador será redefinido
+id number                      O id define qual contador redefinir. O número define o valor para o qual o contador é redefinido em cada ocorrência do seletor. O valor numérico padrão é 0
+initial	                       Define esta propriedade com seu valor padrão.
+inherit	                       Herda esta propriedade de seu elemento pai. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+COUNTER INCREMENT
+A counter-incrementpropriedade aumenta ou diminui o valor de um ou mais contadores CSS.
+A counter-incrementpropriedade geralmente é usada em conjunto com a propriedade de reinicialização do contador e a propriedade de conteúdo .
+** Sintaxe CSS - counter-increment: none|id|initial|inherit;
+
+Valores de propriedade
+Value	                        Description
+none	                        Valor padrão. Nenhum contador será incrementado
+id number                       Define qual contador incrementar. O número define quanto o contador irá incrementar em cada ocorrência do seletor. O incremento padrão é 1. Valores negativos são permitidos. Se id se refere a um contador que não foi inicializado por contador-reset, o valor inicial padrão é 0
+initial	                        Define esta propriedade com seu valor padrão.
+inherit	                        Herda esta propriedade de seu elemento pai.
