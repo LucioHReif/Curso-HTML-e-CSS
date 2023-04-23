@@ -33,6 +33,7 @@
             clear: both
         }
         @media screen and (min-width: 400px){
+     
             body{
                 background: orange;
             }          
@@ -53,3 +54,46 @@
     </div>
 </body>
 </html>
+
+MEDIA QUERRY
+Uma media query consiste de um media type e pelo menos uma expressão que limita o escopo das folhas de estilo usando media features, tal como largura, altura e cor. 
+Media queries, adicionadas no CSS3, deixam a apresentação do conteúdo adaptado a uma gama especifica de dispositivos não precisando mudar o conteúdo em si.
+
+** Operadores Lógicos 
+-> and: usada para combinar múltiplas media features, bem como combinar media features com media types. Uma media query básica, uma media feature simples com a 
+media type all, pode parecer com isso: @media (min-width: 700px) { ... }
+Se, no entanto, você desejar que isso se aplique apenas para telas em landscape, você pode usar o operador and para deixar todas as media features juntas.
+@media (min-width: 700px) and (orientation: landscape) { ... }
+Agora, a media query acima vai apenas retorna verdadeira se o viewport for 700px, wide ou wider e a tela estiver em landscape. Se, no entanto, você deseja apenas que
+isso seja aplicado se a tela em questão for media type TV, você pode encadear essas features com a media type usando o operador and.
+@media tv and (min-width: 700px) and (orientation: landscape) { ... }
+Agora, a media query acima vai ser aplicada apenas se a media type for TV, o viewport for 700px wide ou wider, e a tela estiver em paisagem.
+
+-> Listas separadas por vírgula: comportam-se como o operador or quando utilizadas em media queries. Quando utilizamos media queries com uma lista separada por 
+vírgulas, se qualquer media queries retornar verdadeiro, os estilos ou folhas de estilos serão aplicadas. Cada media query em um lista separa por vírgulas é tratada 
+como uma query individual, e qualquer operador aplica em uma media query não afeta os outros. Isto significa que media queries separadas por vírgulas podem ter objetivos 
+diferentes de media features, types e states.
+Por exemplo, se você quiser aplicar um conjunto de estilos se o dispositivo de visualização tiver um largura mínima de 700px ou estiver sendo segurando em paisagem, 
+você pode escrever o seguinte: @media (min-width: 700px), handheld and (orientation: landscape) { ... }
+Acima, se eu estivesse em um dispositivo screen com um viewport largura de 800px, a afirmação retorna verdadeiro por que a primeira parte, interpretada como 
+@media all and (min-width: 700px) será aplicada no meu dispositivo e portanto retorna verdadeiro, apesar do fato que meu dispositivo screen iria falhar no media type 
+handheld na segunda media query. Do mesmo modo, se eu estivesse segurando um dispositivo em paisagem com um viewport de largura de 500px, enquanto a primeira media 
+query falha devido a largura do viewport, a segunda media query teria sucesso e assim o media statement retorna verdadeiro.
+
+-> not: se aplica em toda a media query e retorna verdadeiro, caso contrário retorna falso (tal como monochrome como cor de tela ou uma tela de largura de 600px 
+com um min-width: 700px recurso consultado). Um not vai apenas negar a media query que é aplicada, de modo não toda a media query que apresente uma media querie 
+com uma lista separada por vírgulas. A palavra chave not não pode ser usada para negar uma característica individual da query, apenas uma media query inteira. 
+Por exemplo, o not é avaliado por último na query seguinte:
+@media not all and (monochrome) { ... }
+Isto significa que a query é avaliada assim:
+@media not (all and (monochrome)) { ... }
+... em vez disso:
+@media (not all) and (monochrome) { ... }
+Um outro exemplo, veja a media query seguinte:
+@media not screen and (color), print and (color)
+É avalida desta forma:
+@media (not (screen and (color))), print and (color)
+
+-> only
+A palavra chave only previne que navegadores antigos que não suportam media queries com media features de aplicar os estilos dados:
+<link rel="stylesheet" media="only screen and (color)" href="example.css" />
