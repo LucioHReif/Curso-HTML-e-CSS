@@ -73,3 +73,149 @@
     </div>
 </body>
 </html>
+
+SLIDESHOW EXEMPLOS
+Exibir uma apresentação de slides manual com W3.CSS é muito fácil. Basta criar muitos elementos com o mesmo nome de classe:
+Exemplo
+<img class="mySlides" src="img_snowtops.jpg">
+<img class="mySlides" src="img_lights.jpg">
+<img class="mySlides" src="img_mountains.jpg">
+<img class="mySlides" src="img_forest.jpg">
+E dois botões para rolar as imagens:
+<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+
+E adicione um JavaScript para selecionar imagens:
+var slideIndex = 1;
+showDivs(slideIndex);
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+JavaScript explicado
+- Primeiro, defina o slideIndex como 1. (Primeira imagem)
+- Em seguida, chame showDivs() para exibir a primeira imagem.
+- Quando o usuário clicar em um dos botões, chame plusDivs() .
+- A função plusDivs() subtrai um ou  adiciona um ao slideIndex.
+- A função showDiv() oculta ( display="none" ) todos os elementos com o nome de classe "mySlides" e exibe ( display="block" ) o elemento com o slideIndex fornecido.
+- Se o slideIndex for maior que o número de elementos (x.length), o slideIndex é definido como zero.
+- Se o slideIndex for menor que 1, ele será definido como número de elementos (x.length).
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*** Apresentação de slides automática ***
+Para exibir uma apresentação de slides automática é ainda mais simples. Você só precisa de um JavaScript um pouco diferente:
+var slideIndex = 0;
+carousel();
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dispositivos HTML
+Os slides não precisam ser imagens. Eles podem ser qualquer conteúdo HTML:
+<div class="mySlides">
+  <div class="w3-container w3-red">
+    <h1><b>Did You Know?</b></h1>
+    <h1><i>We plan to sell trips to the moon in the 2020s</i></h1>
+  </div>
+</div>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Legenda da apresentação de slides
+Adicione um texto de legenda para cada slide de imagem com as classes w3-display-* (topleft, topmiddle, topright, bottomleft, bottommiddle, bottomright, left, right ou middle):
+<div class="w3-display-container mySlides">
+  <img src="img_snowtops.jpg" style="width:100%">
+  <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    French Alps
+  </div>
+</div>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Indicadores de apresentação de slides
+Um exemplo de uso de botões para indicar quantos slides existem na apresentação de slides e qual slide o usuário está visualizando no momento.
+<div class="w3-center">
+  <button class="w3-button" onclick="plusDivs(-1)">&#10094; Prev</button>
+  <button class="w3-button" onclick="plusDivs(1)">Next &#10095;</button>
+  <button class="w3-button demo" onclick="currentDiv(1)">1</button>
+  <button class="w3-button demo" onclick="currentDiv(2)">2</button>
+  <button class="w3-button demo" onclick="currentDiv(3)">3</button>
+</div>
+      
+Outro exemplo:
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="img_nature.jpg">
+  <img class="mySlides" src="img_snowtops.jpg">
+  <img class="mySlides" src="img_mountains.jpg">
+  <div class="w3-center w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Imagens como Indicadores
+Um exemplo de uso de imagens como indicadores:
+<div class="w3-content" style="max-width:1200px">
+  <img class="mySlides" src="img_nature_wide.jpg" style="width:100%">
+  <img class="mySlides" src="img_snow_wide.jpg" style="width:100%">
+  <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+      <img class="demo w3-opacity" src="img_nature_wide.jpg"
+      style="width:100%" onclick="currentDiv(1)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity" src="img_snow_wide.jpg"
+      style="width:100%;display:none" onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity" src="img_mountains_wide.jpg"
+      style="width:100%;display:none" onclick="currentDiv(3)">
+    </div>
+  </div>
+</div>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Várias apresentações de slides na mesma página
+Para operar várias apresentações de slides em uma página, você deve classificar os membros de cada grupo de apresentação de slides com classes diferentes:
+<div class="w3-content">
+<img class="mySlides1" src="img_snowtops.jpg" style="width:100%">
+<img class="mySlides1" src="img_lights.jpg" style="width:100%">
+<img class="mySlides1" src="img_mountains.jpg" style="width:100%">
+<img class="mySlides1" src="img_forest.jpg" style="width:100%">
+</div>
+<div class="w3-content">
+<img class="mySlides2" src="img_la.jpg" style="width:100%">
+<img class="mySlides2" src="img_ny.jpg" style="width:100%">
+<img class="mySlides2" src="img_chicago.jpg" style="width:100%">
+</div>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Slides Animados
+Deslize ou esmaeça um elemento da parte superior, inferior, esquerda ou direita da tela com as classes w3-animate-*.
+<img class="mySlides w3-animate-top"    src="img_01.jpg">
+<img class="mySlides w3-animate-bottom" src="img_02.jpg">
+<img class="mySlides w3-animate-top"    src="img_03.jpg">
+<img class="mySlides w3-animate-bottom" src="img_04.jpg">
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Animação desbotada
+A classe w3-animate-fading faz com que um elemento apareça e desapareça gradualmente (leva cerca de 10 segundos).
+<img class="mySlides w3-animate-fading" src="img_01.jpg">
+<img class="mySlides w3-animate-fading" src="img_02.jpg">
+<img class="mySlides w3-animate-fading" src="img_03.jpg">
+<img class="mySlides w3-animate-fading" src="img_04.jpg">
