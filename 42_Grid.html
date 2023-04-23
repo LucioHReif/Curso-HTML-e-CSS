@@ -46,3 +46,52 @@
     </div>
 </body>
 </html>
+
+ESQUEMA DE GRADE / GRID
+O Módulo de layout de grade CSS oferece um sistema de layout baseado em grade, com linhas e colunas, facilitando o design de páginas da Web sem a necessidade de usar 
+flutuações e posicionamento.
+Exemplo
+<div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+</div>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Propriedade de exibição
+Um elemento HTML torna-se um contêiner de grade quando sua displaypropriedade é definida como gridou inline-grid.
+.grid-container {
+  display: grid;
+}
+.grid-container {
+  display: inline-grid;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Todas as propriedades da grade CSS
+Property	                       Description
+column-gap	                       Especifica o espaço entre as colunas
+gap	                               Uma propriedade abreviada para as propriedades de intervalo entre linhas e intervalos entre colunas
+grid	                           Uma propriedade abreviada para grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns e as propriedades grid-auto-flow
+grid-area	                       Especifica um nome para o item da grade ou esta propriedade é uma propriedade abreviada para as propriedades grid-row-start, grid-column-start, grid-row-end e grid-column-end
+grid-auto-columns	               Especifica um tamanho de coluna padrão
+grid-auto-flow	                   Especifica como os itens colocados automaticamente são inseridos na grade
+grid-auto-rows	                   Especifica um tamanho de linha padrão
+grid-column	                       Uma propriedade abreviada para as propriedades grid-column-start e grid-column-end
+grid-column-end	                   Especifica onde terminar o item da grade
+grid-column-gap	                   Especifica o tamanho do espaço entre as colunas
+grid-column-start	               Especifica onde iniciar o item da grade
+grid-gap	                       Uma propriedade abreviada para as propriedades grid-row-gap e grid-column-gap
+grid-row	                       Uma propriedade abreviada para as propriedades grid-row-start e grid-row-end
+grid-row-end	                   Especifica onde terminar o item da grade
+grid-row-gap	                   Especifica o tamanho do espaço entre as linhas
+grid-row-start	                   Especifica onde iniciar o item da grade
+grid-template	                   Uma propriedade abreviada para as propriedades grid-template-rows, grid-template-columns e grid-areas
+grid-template-areas	               Especifica como exibir colunas e linhas, usando itens de grade nomeados
+grid-template-columns	           Especifica o tamanho das colunas e quantas colunas em um layout de grade
+grid-template-rows	               Especifica o tamanho das linhas em um layout de grade
+row-gap	                           Especifica o intervalo entre as linhas da grade
