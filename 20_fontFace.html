@@ -22,3 +22,35 @@
     <h1>estrutura basica</h1>
 </body>
 </html>
+
+PROPRIEDADE FONT FACE
+especifica uma fonte personalizada com a qual exibir o texto; a fonte pode ser carregada de um servidor remoto ou de uma fonte instalada localmente no 
+próprio computador do usuário.
+** Descritores
+-> ascent-override: Define a métrica de subida para a fonte.
+-> descent-override: Define a métrica de descida para a fonte.
+-> font-display: Determina como uma face de fonte é exibida com base em se e quando ela é baixada e está pronta para uso.
+-> font-family: Especifica um nome que será usado como o valor de face da fonte para as propriedades da fonte.
+-> font-stretch: Um font-stretchvalor. Aceita dois valores para especificar um intervalo suportado por uma fonte, por exemplofont-stretch: 50% 200%;
+-> font-style: Um font-stylevalor. Aceita dois valores para especificar um intervalo suportado por uma fonte, por exemplofont-style: oblique 20deg 50deg;
+-> font-weigh: Um font-weightvalor. Aceita dois valores para especificar um intervalo suportado por uma fonte, por exemplofont-weight: 100 400;
+-> font-feature-settings: Permite o controle sobre recursos tipográficos avançados em fontes OpenType.
+-> font-variation-settings: PermIte controle de baixo nível sobre as variações de fonte OpenType ou TrueType, especificando os nomes dos eixos de quatro 
+letras dos recursos para variar, junto com seus valores de variação.
+-> line-gap-override: Define a métrica de intervalo de linha para a fonte.
+-> size-adjust: Define um multiplicador para contornos de glifo e métricas associadas a esta fonte. Isso torna mais fácil harmonizar os designs de várias 
+fontes quando renderizadas no mesmo tamanho de fonte.
+-> src: Especifica referências a recursos de fonte, incluindo dicas sobre o formato e a tecnologia da fonte. É necessário para que a regra @font-face seja válida.
+-> unicode-range: O intervalo de pontos de código Unicode a serem usados ​​na fonte.
+
+** Descrição
+É comum usar ambos url()elocal() juntos, para que a cópia instalada do usuário da fonte seja usada, se disponível, voltando ao download de uma cópia da fonte se 
+ela não for encontrada no dispositivo do usuário. Se a local()função for fornecida, especificando um nome de fonte para procurar no dispositivo do usuário e se o 
+agente do usuário encontrar uma correspondência, essa fonte local será usada. Caso contrário, o recurso de fonte especificado usando a url()função é baixado e usado.
+Os navegadores tentam carregar recursos em sua ordem de declaração de lista, portanto, geralmente local()deve ser escrito antes de url(). Ambas as funções são 
+opcionais, portanto, um bloco de regras contendo apenas uma ou mais local()sem url()é possível. Se fontes format()ou tech()valores mais específicos forem desejados, 
+eles devem ser listados antes das versões que não possuem esses valores, pois a variante menos específica seria tentada e usada primeiro.
+Ao permitir que os autores forneçam suas próprias fontes, @font-facetorna possível criar conteúdo sem se limitar às chamadas fontes "seguras para a Web" 
+(ou seja, as fontes que são tão comuns que são consideradas universalmente disponíveis). 
+A capacidade de especificar o nome de uma fonte instalada localmente para procurar e usar torna possível personalizar a fonte além do básico, ao mesmo tempo em que 
+possibilita fazê-lo sem depender de uma conexão com a Internet.
