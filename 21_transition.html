@@ -27,3 +27,25 @@
     <div>TRANSIÇÃO</div>
 </body>
 </html>
+
+PROPRIEDADE TRANSITION
+As transições CSS permitem que você altere os valores das propriedades sem problemas, durante um determinado período.
+Exemplos:
+div {
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+ou da forma abreviada
+
+div {
+  transition: width 2s linear 1s;
+}
+
+Property	                   Description
+transition	                   Uma propriedade abreviada para definir as quatro propriedades de transição em uma única propriedade
+transition-delay	           Especifica um atraso (em segundos) para o efeito de transição
+transition-duration	           Especifica quantos segundos ou milissegundos um efeito de transição leva para ser concluído
+transition-property	           Especifica o nome da propriedade CSS para a qual o efeito de transição se destina
+transition-timing-function	   Especifica a curva de velocidade do efeito de transição
